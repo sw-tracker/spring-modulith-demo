@@ -31,15 +31,16 @@ class ModularityTests {
 
 	@Test
 	void verifyModularity() {
-		// --> Module model
-		System.out.println(modules.toString());
-
 		// --> Trigger verification
 		modules.verify();
 	}
 
 	@Test
 	void renderDocumentation() {
+        // --> Module model
+        System.out.println(modules.toString());
+
+        // --> Generate UML
 		var canvasOptions = CanvasOptions.defaults();
 
 		var docOptions = DiagramOptions.defaults()
