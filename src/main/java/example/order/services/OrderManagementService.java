@@ -13,14 +13,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package example.inventory;
+package example.order.services;
 
-import org.jmolecules.ddd.annotation.Repository;
+import example.customer.Customer.CustomerIdentifier;
+import example.order.repositories.OrderRepository;
+import example.order.spi.Order;
+import jakarta.transaction.Transactional;
+import lombok.RequiredArgsConstructor;
+
+import org.jmolecules.ddd.annotation.Service;
 
 /**
  * @author Oliver Drotbohm
  */
-@Repository
-class InventoryRepository {
+@Transactional
+@Service
+@RequiredArgsConstructor
+public class OrderManagementService {
 
+	private final OrderRepository orders;
+
+	public Order create(CustomerIdentifier customerId) {
+		return new Order(customerId);
+	}
+
+	public Order complete(Order order) {
+		return orders.save(order.complete());
+	}
 }

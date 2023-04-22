@@ -13,29 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package example.inventory;
+package example.order.repositories;
 
-import example.order.Order.OrderCompleted;
-import lombok.RequiredArgsConstructor;
+import example.order.spi.Order;
+import example.order.spi.Order.OrderIdentifier;
 
-import org.jmolecules.ddd.annotation.Service;
-import org.springframework.modulith.ApplicationModuleListener;
+import org.springframework.data.repository.CrudRepository;
 
 /**
  * @author Oliver Drotbohm
  */
-@Service
-@RequiredArgsConstructor
-public class Inventory {
+public interface OrderRepository extends CrudRepository<Order, OrderIdentifier> {
 
-	@SuppressWarnings("unused") //
-	private final InventoryRepository repository;
-
-	/**
-	 * Updates the stock for all line items contained in the order.
-	 */
-	@ApplicationModuleListener
-	void updateStock(OrderCompleted order) {
-
-	}
 }

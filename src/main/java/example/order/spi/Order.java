@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package example.order;
+package example.order.spi;
 
 import example.customer.Customer;
 import example.customer.Customer.CustomerIdentifier;
-import example.order.Order.LineItem.LineItemId;
-import example.order.Order.OrderIdentifier;
+import example.order.spi.Order.LineItem.LineItemId;
+import example.order.spi.Order.OrderIdentifier;
 import jakarta.persistence.Table;
 import lombok.Getter;
 
@@ -53,7 +53,7 @@ public class Order extends AbstractAggregateRoot<Order> implements AggregateRoot
 		this.customer = Association.forId(customerId);
 	}
 
-	Order complete() {
+	public Order complete() {
 
 		this.status = Status.COMPLETED;
 

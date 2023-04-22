@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package example.inventory;
+package example.inventory.config;
 
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
@@ -28,7 +28,7 @@ import org.springframework.boot.context.properties.bind.ConstructorBinding;
 @Value
 @RequiredArgsConstructor(access = AccessLevel.PACKAGE, onConstructor = @__(@ConstructorBinding))
 @ConfigurationProperties("example.inventory")
-class InventorySettings {
+public class InventorySettings {
 
 	/**
 	 * Some Javadoc.

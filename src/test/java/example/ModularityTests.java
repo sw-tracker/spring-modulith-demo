@@ -31,7 +31,6 @@ class ModularityTests {
 
 	@Test
 	void verifyModularity() {
-
 		// --> Module model
 		System.out.println(modules.toString());
 
@@ -40,14 +39,8 @@ class ModularityTests {
 	}
 
 	@Test
-	void renderDocumentation() throws Exception {
-
-		var canvasOptions = CanvasOptions.defaults()
-
-		// --> Optionally enable linking of JavaDoc
-		// .withApiBase("https://foobar.something")
-
-		;
+	void renderDocumentation() {
+		var canvasOptions = CanvasOptions.defaults();
 
 		var docOptions = DiagramOptions.defaults()
 				.withStyle(DiagramStyle.UML);
