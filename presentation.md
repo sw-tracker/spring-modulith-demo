@@ -8,7 +8,7 @@
 <br/>
 <br/>
 
-# Spring Modulith
+# Spring Modulith - Spring for the Architecturally Curious Developer
 
 [https://spring.io/projects/spring-modulith](https://spring.io/projects/spring-modulith)
 
@@ -282,7 +282,7 @@ It would be nice if the framework provided support for domain based structuring.
 
 # Architectural Observability
 
-Being able to get a high-level understanding of the logical, functional parts of application and how they interact with each other.
+Being able to get a high-level understanding of the logical, functional parts of an application and how they interact with each other.
 
 ![](presentation/generated-puml.png)
 
